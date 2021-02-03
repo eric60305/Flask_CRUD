@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+<head>
+</head>
+
+<body>
+<!-- <form action = "#" method = "POST">
+    <p>名字:</p>
+        <p><input type="text" name="user_name"></p>
+    <p>Title:</p>
+        <p><input type="text" name="title"></p>
+    <p>Content:</p>
+        <p><input type="text" name="content"></p>
+        <p><input type="submit" value="送出"></p>
+    <input type ="button" onclick="javascript:location.href='delete'" value="刪除"></input>
+    <input type ="button" onclick="javascript:location.href='register'" value="註冊"></input>
+    <input type ="button" onclick="javascript:location.href='update_db'" value="修改"></input> -->
+
+{% block title %}<title>Test Index</title>{% endblock %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container">
+        <h1 class="display-4">查看所有留言</h1>
+            <ul class="list-group">
+
+            {% for item in values%}
+                <li class="list-group-item">
+                    <!-- user 要跟index.py的backref變數名稱一樣 -->
+                    <h4 class="mb-1">Name： {{item.user.name}}</h4>
+                    <h4 class="mb-1">Title： {{item.title}}</h4>
+                    <h4 class="mb-1">Content： {{item.content}}</h4>
+                        <!-- <p class="mb-1">Title： {{item.title}}</p> -->
+                        <!-- <p class="mb-1">content： {{item.content}}</p> -->
+                </li>
+            {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

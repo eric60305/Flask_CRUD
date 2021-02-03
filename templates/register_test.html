@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block body %}
+<form>
+    <label>
+      <p class="label-txt">Enter Your Name</p>
+      <input type="text" class="input">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">Enter Your City</p>
+      <input type="text" class="input">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <!-- <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="text" class="input">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label> -->
+    <button type="submit">submit</button>
+  </form>
+{% endblock %}

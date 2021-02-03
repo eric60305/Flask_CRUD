@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}<title>Add Message</title>{% endblock %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<!-- <link rel="shortcut icon" href="https://www.flaticon.com/svg/vstatic/svg/2996/2996271.svg?token=exp=1611289169~hmac=31c026f0ddd864c4668616668b5311ff"> -->
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+<head>
+</head>
+{% block body %}
+<div class="container">
+    <body background="static\pexels-pok-rie-2049422.jpg">
+    <div class="container-xl" style="margin-top: 11.5%;">
+        <form action="#" method="POST">
+            <div class="container">
+
+                <div class="col-md-6">
+                    <label for="username" class="form-label"><span style="color:orange;">使用者名稱</span></label>
+                    <!-- <p>                    
+                    </p> -->
+                    <input type="text" class="form-control" id="username" placeholder="使用者名稱 *" name = "user_name">
+                </div>
+            </div>
+
+            <p>                    
+            </p>
+
+            <div class="container">
+                <div class="col-md-6">
+                    <label for="title" class="form-label"><span style="color:orange;">留言標題</span></label>
+                    <!-- <p>                    
+                    </p> -->
+                    <input type="text" class="form-control" id="title" placeholder="留言標題 *" name = "title">
+                
+                    <!-- <label for="exampleInputPassword1" class="form-label"><span style="color:orange;">City Name</span></label>
+                    <input type="text" class="form-control" id="exampleInputCitymane1" placeholder="City Name *"> -->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="col-md-6">
+                    <!-- <label for="exampleFormControlTextarea" class="form-label"><span style="color:orange;">留言內容</span></label> -->
+                    <!-- <p>                    
+                    </p> -->
+                    <!-- <input type="text" class="form-control" id="exampleFormControlTextarea" placeholder="留言內容 *" name = "content" rows="3"> -->
+
+                    <label for="content"><span style="color:orange;">留言內容</span></label>
+                    <textarea class="form-control" id="content" rows="6" placeholder="留言內容 *" name = "content"></textarea>
+                
+                    <!-- <label for="exampleInputPassword1" class="form-label"><span style="color:orange;">City Name</span></label>
+                    <input type="text" class="form-control" id="exampleInputCitymane1" placeholder="City Name *"> -->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mb-3 form-check">
+                    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                    <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                    <div id="InfoHelp" class="form-text">我們絕不會與任何人分享您的信息。</div>
+                </div> 
+                <button type="submit" class="btn btn-primary">確定</button>  
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+</html>

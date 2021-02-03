@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}<title>Register</title>{% endblock %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<!-- <link rel="shortcut icon" href="https://www.flaticon.com/svg/vstatic/svg/2996/2996271.svg?token=exp=1611289169~hmac=31c026f0ddd864c4668616668b5311ff"> -->
+{% endblock %}
+
+{% block body %}
+<!-- <title>Register</title> -->
+<!-- <link rel="shortcut icon" href="https://www.flaticon.com/svg/vstatic/svg/2996/2996271.svg?token=exp=1611289169~hmac=31c026f0ddd864c4668616668b5311ff"> -->
+<div class="container">
+    <body background="static\pexels-giorgio-de-angelis-1413412.jpg" style = "background-size: cover">
+        <!-- <body background="static\joe-cooke-HzXhY9Wgzbw-unsplash.jpg" style = "background-size: 100% 100%; background-attachment: fixed; background-repeat: no-repeat;"> -->
+    <div class="container-xl" style="margin-top: 18%;">
+        <form action="#" method="POST">
+            <div class="container">
+
+                <div class="col-md-4">
+                    <label for="exampleInputusername" class="form-label"><span style="color:orange;">使用者名稱</span></label>
+                    <input type="text" class="form-control" id="exampleInputusername" placeholder="使用者名稱 *" name = "user_name">
+                </div>
+            </div>
+
+            <p>                    
+            </p>
+
+            <div class="container">
+                <div class="col-md-6">
+                    <label for="exampleInputCity" class="form-label"><span style="color:orange;">城市名稱</span></label>
+                    <!-- <input type="text" class="form-control" id="exampleInputCityname1" placeholder="City Name *" name = "city_name"> -->
+                    
+                    <select name="city_select" class="form-select" aria-label="Default select example">
+                        <option selected>城市名稱</option>
+                        <option value="1">Taipei</option>
+                        <option value="2">New Taipei</option>
+                        <option value="3">Taoyuan</option>
+                        <option value="4">Taichung</option>
+                        <option value="5">Tainan</option>
+                        <option value="6">Kaohsiung</option>
+                      </select>
+                    <!-- <label for="exampleInputPassword1" class="form-label"><span style="color:orange;">City Name</span></label>
+                    <input type="text" class="form-control" id="exampleInputCitymane1" placeholder="City Name *"> -->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="mb-3 form-check">
+                    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                    <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                    <div id="InfoHelp" class="form-text">我們絕不會與任何人分享您的信息。</div>
+                </div> 
+                <button type="submit" class="btn btn-primary">確定</button>  
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

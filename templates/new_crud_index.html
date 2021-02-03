@@ -1,0 +1,100 @@
+{% include "layouts/main.html" %}
+<!-- <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<html>
+    {% block title %}<title>Home Page</title>{%  endblock %}
+
+    {% block svg %}
+    <!-- <link rel="shortcut icon" href="{{url_for('static', filename = 'messenger.png')}}"> -->
+    {% endblock %}
+
+  <body>
+    {% block body %}
+    <!-- margin-top：與上方元素的距離、margin-right：與右方元素的距離、margin-bottom：與下方元素的距離、margin-left：與左方元素的距離 -->
+    <div style="margin:5px 10px 15px 20px">
+        <style>
+            body {
+                background-image: url("static/joe-cooke-HzXhY9Wgzbw-unsplash.jpg");
+                padding-bottom: 45%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+            }
+        </style>
+
+        <!--使用 font awesome icon -->
+        <p class="h1"><b><i class="fa fa-clipboard-list" style="color: gray;"></i><span style="color:gray;">留言列表</span></b></p>           
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">使用者名稱</th>
+                <th scope="col">標題</th>
+                <th scope="col">內容</th>
+                <th scope="col">按鈕</th>
+              </tr>
+            </thead>
+            {% for row in Messages %}
+            <tr>
+                <td scope="row">{{row.id}}</td>
+                <td scope="row">{{row.user.name}}</td>
+                <td scope="row">{{row.title}}</td>
+                <td scope="row">{{row.content}}</td>
+                <td scope="row"><input type ="button" onclick="javascript:location.href='delete/{{row.id}}'" value="刪除"></input></td>
+                <td scope="row"><input type ="button" data-toggle="modal" data-target="#editmodel{{row.id}}" value="修改"></input></td>
+            </tr>
+
+              <!--model start-->
+              <div class="modal" tabindex="-1" role="dialog" id="editmodel{{row.id}}">
+                <div class="modal-dialog" role="document"> 
+                  <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">更改留言</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> 
+                        </div>
+
+                        <div class="modal-body">
+                          <form action="#" method="POST">
+                            <!-- <div class="form-group"> -->
+                                <!-- <label>名稱:</label> -->
+                                <input type="hidden"  name="id" value="{{row.id}}">
+                                <!-- <input type="text" class="form-control" name="name" value="{{row.name}}"> -->
+                            <!-- </div> -->
+            
+                            <div class="form-group">
+                                <label><span style="color:orange;">標題:</span></label>
+                                <input type="text" class="form-control" name="title" value="{{row.title}}">
+                            </div>
+              
+                            <div class="form-group">
+                                <label><span style="color:orange;">內容:</span></label>
+                                <!-- <input type="text" class="form-control" name="content" value="{{row.content}}"> -->
+                                <textarea type="text" class="form-control" id="content" name = "content">{{row.content}}</textarea>
+                            </div>
+            
+                            <div class="form-group">
+            
+                              <button class="btn btn-primary" type="sbumit">確定</button>
+                          </form> 
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                  </div>
+              </div>
+              <!--model end-->
+         </div>
+
+            {% endfor  %}
+        </table>
+    </div>
+    {% endblock %}
+
+  </body>
+  {% block js %}
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  {% endblock %}
+</html>

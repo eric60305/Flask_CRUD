@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css">
+
+    {% block svg %}
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'messenger.png')}}">
+    {% endblock %}
+
+    {% block css %}
+    {% endblock %}
+    
+</head>
+<body>
+  <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"></header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand">
+              <a href=""><img src="static\chat.png" width="50" height="50"></a>
+              <!-- <span>留言板</span> -->
+            </a>
+            <!-- 當網頁寬度太小時，這些導覽列會直接縮成一個按鈕（通常長的像「三」），我們一樣可以寫出這樣的語法來 -->
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+              <span class="sr-only">導覽按鈕</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- 選單按鈕底下放要縮放的內容 -->
+          <div id="navbar-menu" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a class="nav-link" href="/">留言板</a></li>
+              <li><a class="nav-link" href="/add">新增訊息</a></li>
+              <li><a class="nav-link" href="/register">註冊</a></li>
+            </ul>
+            <p class="navbar-text"><b><span style="color:white;">MESSAGEBOARD</span></b></p>
+          </div>
+        </div>
+      </nav>
+    {% block body %}
+    {% endblock %}
+  </header>
+</body>
+
+<footer >
+  <!-- <div class="container-fluid" style = "position: absolute; bottom: 0; padding-right: 0px; padding-left: 0px;"> -->
+      <!-- <div class="navbar navbar-inverse navbar-fixed-bottom">
+          <h3 style="margin-top: 8px; text-align: center;"><span style="color:white;">Reddoor Intern</span></h3>
+      </div>        -->
+  <!-- </div> -->
+</footer>
+{% block footer %}
+{% endblock %}
+
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>document.body.style.overflow='hidden';</script>
+    {% block js %}
+    {% endblock %}
+</html>
